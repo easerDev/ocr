@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+<title>Python Flask File Upload Example</title>
+<meta charset="UTF-8">
+
+<img class="w3-image w3-round-large" src="https://as1.ftcdn.net/jpg/02/87/34/90/500_F_287349015_RqABv2gykmhleCoJxbd0j4D96RXr7lnP.jpg" alt="test1" width="700" height="394">
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+</head>
+        
+
+
+ 
+    
+    <body>
+
+
+    <h2>Sélectionner A un fichier à analyser</h2>
+    <p>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class=flashes>
+            {% for message in messages %}
+              <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+    </p>
+    <form method="post" action="/testVisuel" enctype="multipart/form-data">
+        <dl>
+            <p>
+                <input type="file" name="file" autocomplete="off" required>
+            </p>
+        </dl>
+        <p>
+            <input type="submit" value="Télécharger">
+        </p>
+    
+              
+   
+    <div class="results">Retour de l'analyse du fichier : 
+    <pre>{{ retour_image4 }}</pre>
+    </div>    
+    
+
+
+    </form>    
+    
+    
+    
+    
+    
+    
+    
+    
+    <h2>Prédire la variété d'une iris par de l'IA</h2>
+
+    <p>
+    <form method="post" action="/testVisuel" enctype="multipart/form-data">
+      <label for="sepal.length">Longueur du sépale :</label><br>
+      <input type="number" id="sepal.length" name="sepal.length" value=0><br>
+      <label for="sepal.width">Largeur du sépale :</label><br>
+      <input type="number" id="sepal.width" name="sepal.width" value=0><br>
+      
+        
+      <label for="petal.length">Longueur de la pétale :</label><br>
+      <input type="number" id="petal.length" name="petal.length" value=0><br>
+      <label for="petal.width">Largeur de la pétale :</label><br>
+      <input type="number" id="petal.width" name="petal.width" value=0><br>   
+      
+           
+    
+    <input type="submit" value="Connaître la variété">
+    <input type="button" value="Afficher la somme" onClick="somme()">
+    <p>La somme est égale à :  <span id="somme"></span> <p>
+    <p>La variété prédite pour  :  <span id="prediction">test span</span> <p>
+    <p>{{ prediction_text }} <p>
+    </form> 
+
+    <form action="PayslipServlet" method="get">
+          Last name:    <input type="text" name="lname" id="lname"><br/>
+          First name:   <input type="text" name="fname" id="fname"><br/>
+          Middle name:  <input type="text" name="mname" id ="mname"><br/>
+          Name: <span id="result"></span>
+          <br>
+          <input type="button" value="Afficher nom prénom" onClick="nom_prenom()">
+        </form>
+
+
+    <script>
+      function nom_prenom() {
+        document.getElementById("result").innerHTML = document.getElementById('fname').value + " " + 
+            document.getElementById('mname').value + " " + document.getElementById('lname').value;
+      }
+        
+      function somme() {
+          document.getElementById("somme").innerHTML = parseFloat(document.getElementById('petal.length').value) +
+              parseFloat(document.getElementById('sepal.length').value) + parseFloat(document.getElementById('petal.width').value) + 
+              parseFloat(document.getElementById('sepal.width').value);
+      }
+        
+    </script>    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <h2>Boutons et liens</h2>
+
+    
+        <button onclick="window.location.href = 'https://fr.w3docs.com/';">Vers un site externe</button>
+        <button onclick="window.location.href = 'templateStartUp.html';">Vers une autre page du site</button>
+        <a href="templateStartUp.html">The Link</a>
+   
+    </body>
+</html>
